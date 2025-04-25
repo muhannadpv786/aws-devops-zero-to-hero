@@ -18,11 +18,11 @@ Create IAM Role
 
 ```
 eksctl create iamserviceaccount \
-  --cluster=<your-cluster-name> \
+  --cluster=muhannad-cluster \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
-  --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::279707218273:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 ```
 
@@ -45,10 +45,10 @@ Install
 ```
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
   -n kube-system \
-  --set clusterName=<your-cluster-name> \
+  --set clusterName=muhannad-cluster \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller \
-  --set region=<region> \
+  --set region=ap-south-1 \
   --set vpcId=<your-vpc-id>
 ```
 
