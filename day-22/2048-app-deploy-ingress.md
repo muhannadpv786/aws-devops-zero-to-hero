@@ -4,8 +4,8 @@
 
 ```
 eksctl create fargateprofile \
-    --cluster demo-cluster \
-    --region us-east-1 \
+    --cluster muhannad-cluster \
+    --region ap-south-1 \
     --name alb-sample-app \
     --namespace game-2048
 ```
